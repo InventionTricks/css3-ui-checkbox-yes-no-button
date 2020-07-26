@@ -1,0 +1,83 @@
+*,*:after,*:before{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+body{
+	font-family: arial;
+	font-size: 16px;
+	margin: 0;
+	background: #000;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+.ui_check{
+	position: relative;
+	width: 100px;
+	height: 40px;
+	color: #fff;
+}
+.ui_check:before{
+	content: "Yes";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 50%;
+	line-height: 40px;
+	text-align: center;
+	z-index: 1
+}
+.ui_check:after{
+	content: "No";
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 50%;
+	line-height: 40px;
+	text-align: center;
+	z-index: 1
+}
+.ui_check input{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	opacity: 0;
+	margin: 0;
+	z-index: 3;
+}
+.ui_check strong{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	border-radius: 30px;
+	background:linear-gradient(to right, #00a0d1 1%, #03506a 2%);
+	background-size: 100% 100%;
+	transition: all 0.3s linear;
+}
+.ui_check label{
+	position: absolute;
+	width: 50%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	border-radius: 30px;
+	background:linear-gradient(to bottom, #fff 0%, #454545);
+	background-size: 100% 40px;
+	transition: all 0.3s linear;
+	z-index: 2;
+}
+.ui_check input:checked + strong{
+	box-shadow: 1px 1px 20px 3px #007295;
+	background-size: 5000% 100%;
+}
+.ui_check input:checked + strong + label{
+	left: 50%;
+	background-size: 100% 100px;
+}
